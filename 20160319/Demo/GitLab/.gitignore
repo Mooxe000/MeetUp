@@ -1,0 +1,6 @@
+gitlab/*
+!gitlab/.gitkeep
+postgresql/*
+!postgresql/.gitkeep
+redis/*
+!redis/.gitkeep
