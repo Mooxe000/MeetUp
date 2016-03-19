@@ -4,7 +4,7 @@ cwd="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
 
 set -e
 
-pjName="MeetUp-Docker-Wuhan-20160319"
+pjName="MeetUp"
 
 docker run \
   --name ${pjName} \
