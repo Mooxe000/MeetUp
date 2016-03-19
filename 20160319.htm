@@ -1,0 +1,447 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.4.1
+    site: https://github.com/ksky521/nodePPT
+    date: 2016年03月19日
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Docker 在开发中应用二三例 —— 程序猿必备开发技能 - By FooTearth</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.moon.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Docker 在开发中应用二三例</h1>
+<h2>—— 程序猿必备开发技能</h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>About Me</h1>
+<ul>
+<li>中文名: 朱礼</li>
+<li>常用ID: FooTearth <a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#102;&#111;&#x6f;&#x74;&#101;&#x61;&#114;&#x74;&#104;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;" target="_blank">&#102;&#111;&#x6f;&#x74;&#101;&#x61;&#114;&#x74;&#104;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></li>
+</ul>
+
+</hgroup><article class="moveIn">
+
+
+<ul>
+<li>受开源熏陶多年，技术上比较爱折腾</li>
+<li>重度依赖 google &amp;&amp; github &amp;&amp; docker</li>
+<li>目前在武汉一家创业公司做架构，现阶段以 node 生态下的前端为主</li>
+<li>封了一些常用语言环境的镜像，并在开发中使用</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>基础设施：两个典型场景快速体验 docker</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>场景一：搭建 VPN</h2>
+<ul>
+<li>场景简介<ul>
+<li>GooGle<ul>
+<li>程序猿必备开发技能</li>
+<li>设计师都会使用的技能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Source: <a href="https://github.com/Mooxe000/mooxe-docker-ladder" target="_blank">https://github.com/Mooxe000/mooxe-docker-ladder</a></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>场景二：搭建 GitLab &amp;&amp; Jenkins</h2>
+<ul>
+<li>场景简介</li>
+<li>Source：<ul>
+<li>GitLab: <a href="https://github.com/sameersbn/docker-gitlab" target="_blank">https://github.com/sameersbn/docker-gitlab</a></li>
+<li>Jenkins: <a href="https://github.com/jenkinsci/dockero" target="_blank">https://github.com/jenkinsci/dockero</a></li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>为什么从开发这个角度讲</h1>
+<ul>
+<li>团队内部推广比较困难</li>
+<li>多数讲题背景生态讲的多，实操讲的比较少</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>企业内推广不畅</h1>
+<h2>原因一: 对新技术的尝试多半会比较谨慎</h2>
+<ul>
+<li>开发人员：听说过，没试过，不知道能干嘛</li>
+<li>Leader：觉得既没时间又没人探索</li>
+<li>CTO：认为风险大</li>
+</ul>
+<h1>? 什么样的新技术容易被接受 ?</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>什么样的新技术容易被接受</h1>
+<ul>
+<li>曝光率高</li>
+<li>无副作用</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>曝光率高</h1>
+<p>火到不知道就不好意思跟人聊天</p>
+<ul>
+<li>React</li>
+<li>Docker</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>无副作用</h1>
+<ul>
+<li>基础设施</li>
+<li>开发环境</li>
+<li>测试环境</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>企业内推广不畅</h1>
+<h2>原因一: 没有明确的职位，职责不明</h2>
+<ul>
+<li>开发认为属运维，运维认为属开发</li>
+<li><a href="https://zh.wikipedia.org/zh-sg/DevOps" target="_blank">DevOps</a></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>DevOps 现状</h2>
+<ul>
+<li>拉钩搜索<ul>
+<li>北京 2 页</li>
+<li>上海 1 页</li>
+<li>深圳 1 个</li>
+<li>广州 1 个</li>
+<li>杭州 2 个</li>
+<li>武汉 0 个</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>DevOps 阶段</h2>
+<ul>
+<li>工具团队（提供基础设施、封开发镜像）-- 开发</li>
+<li>应用 Docker 化（容器化） -- 开发、测试</li>
+<li>持续集成持续交付（CICD） -- 测试、生产</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>开发环境：以 web 前后端开发 为例，动手 构建开发镜像</h1>
+<ul>
+<li>base 镜像</li>
+<li>基于 base 的各语言 开发环境 镜像</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>base 镜像</h2>
+<ul>
+<li>Source: <a href="https://github.com/Mooxe000/mooxe-docker-base" target="_blank">https://github.com/Mooxe000/mooxe-docker-base</a></li>
+<li>自定义的环境: 各团队，各运维人员 风格 习惯 不通<ul>
+<li>指定 操作系统及版本（centos / ubuntu / arch / (gentoo/lfs) / <strong>Apline</strong>）</li>
+<li>系统、软件包更新到最新</li>
+<li>指定 shell 环境（bash / zsh / fish / elvish）</li>
+<li>更新源，host，dns 等</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>基于 base 的各语言 开发环境 镜像</h2>
+<ul>
+<li><p>nodejs</p>
+<ul>
+<li>Source: <a href="https://github.com/Mooxe000/mooxe-docker-node" target="_blank">https://github.com/Mooxe000/mooxe-docker-node</a></li>
+<li>npm - nvm - cnpm</li>
+</ul>
+</li>
+<li><p>php（未更新到最新）</p>
+<ul>
+<li>Source: <a href="https://github.com/Mooxe000/mooxe-docker-php" target="_blank">https://github.com/Mooxe000/mooxe-docker-php</a></li>
+<li>php - composer - 国内加速</li>
+<li>PS. 案例<ul>
+<li>一次关于 要不要使用 Docker 的争论</li>
+<li>生产环境故障，查了一天查下来，发现 php 版本被升级</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>golang</p>
+<ul>
+<li>Source <a href="https://github.com/Mooxe000/mooxe-docker-golang" target="_blank">https://github.com/Mooxe000/mooxe-docker-golang</a></li>
+</ul>
+</li>
+<li><p>python</p>
+<ul>
+<li>Source <a href="https://github.com/Mooxe000/mooxe-docker-python" target="_blank">https://github.com/Mooxe000/mooxe-docker-python</a></li>
+<li>pip-pyenv-virtualenv</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>测试环境：基于 docker 的 zookeeper - activemq 测试环境</h1>
+<ul>
+<li>项目介绍</li>
+<li>source:<ul>
+<li>zookeeper <a href="https://github.com/Mooxe000/mooxe-docker-zookeeper" target="_blank">https://github.com/Mooxe000/mooxe-docker-zookeeper</a></li>
+<li>activemq <a href="https://github.com/Mooxe000/mooxe-docker-activemq" target="_blank">https://github.com/Mooxe000/mooxe-docker-activemq</a></li>
+</ul>
+</li>
+<li>使用 golang 作为 系统脚本语言<ul>
+<li>为什么选择 golang</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Tips</h1>
+<h2>如何进入一个已经运行的docker</h2>
+<ul>
+<li>过去很麻烦，借助脚本 或 第三方工具</li>
+<li>docker exec（不确定是哪个版本加上的）</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Tips</h1>
+<h2>docker 镜像的保存和加载（save &amp;&amp; load）</h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Tips</h1>
+<h2>开发中，推荐 mount 本地源代码目录。</h2>
+<ul>
+<li>分离 代码 和 运行环境</li>
+<li>原因，假设 mount 源代码到 容器中 固化<ul>
+<li>改代码 推一次，再拉一次</li>
+<li>如果改动了构建，还得得 重新构建 镜像</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Tips</h1>
+<h2>docker-osx-dev</h2>
+<ul>
+<li>挂载体积过大，响应超时（ls）EX. 编译 android 内核</li>
+<li>前端 hot-reload 失效。EX. webpack hot-reload<ul>
+<li>临时解决办法：watch 之后 触发 读写该源文件<ul>
+<li>副作用：光标每次定位到文件开始位置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Source: <a href="https://github.com/brikis98/docker-osx-dev" target="_blank">https://github.com/brikis98/docker-osx-dev</a></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Tips</h1>
+<h2>docker-machine-nfs</h2>
+<p>osx 上 跑 gitlab 时，拉 postgresql 镜像 会报没有权限 的 错误</p>
+<pre><code class="bash">brew install docker-machine-nfs
+# if docker_machine_name is &#39;dev&#39;
+docker-machine restart dev
+docker-machine-nfs dev --nfs-config=&quot;-alldirs -maproot=0&quot;
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Tips</h1>
+<h2>探讨 docker file</h2>
+<ul>
+<li>可编程性不强 导致 可复用能力不强</li>
+<li>show demo<ul>
+<li>使用 node flightplan 参照 base 镜像 初始化 服务器</li>
+</ul>
+</li>
+<li>可尝试探索的方向<ul>
+<li>预编译 生成 dockerfile</li>
+<li>绕过 dockerfile，直接调用 api 执行（可行性）</li>
+<li>tasks 通过容器 编译 二进制执行文件（like golang），再送到 容器 中执行</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>在开发环节 docker 的优势</h1>
+<ul>
+<li>环境搭建 &amp;&amp; 开发 分离<ul>
+<li>一次固化，随时随地使用，而不用关心环境如何搭建</li>
+</ul>
+</li>
+<li>环境一致<ul>
+<li>所有开发人员的运行环境都是一致的</li>
+<li>引申 到 测试、生产环境</li>
+</ul>
+</li>
+<li>系统隔离<ul>
+<li>应用运行环境不再与宿主环境相关</li>
+</ul>
+</li>
+<li>运行环境隔离<ul>
+<li>多运行环境相互不受影响</li>
+</ul>
+</li>
+<li>服务和数据隔离<ul>
+<li>协作不共用 服务，避免 数据污染</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>所有示例都工程固化发布于 GitHub 的开放项目</h1>
+<ul>
+<li>PPT -</li>
+</ul>
+<h2>固化</h2>
+<ul>
+<li>何为固化<ul>
+<li>文本化<ul>
+<li>可版本控制</li>
+<li>可追溯</li>
+</ul>
+</li>
+<li>易恢复</li>
+</ul>
+</li>
+<li>企业环境中 应 固化 Everything</li>
+<li>固化服务器环境只是其中一个环节</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>联系方式</h1>
+<ul>
+<li>GitHub<ul>
+<li><a href="https://github.com/footearth" target="_blank">https://github.com/footearth</a></li>
+<li><a href="https://github.com/Mooxe000" target="_blank">https://github.com/Mooxe000</a></li>
+</ul>
+</li>
+<li>WeChat<ul>
+<li>footearth</li>
+</ul>
+</li>
+<li>Email<ul>
+<li>footearth@gmail.com</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>谢感大家</h1>
+
+</hgroup><article>
+
+<h1>感谢以下服务或者项目</h1>
+<h2>GooGle</h2>
+<h2>GitHub</h2>
+<h2>Docker</h2>
+<h2>DaoCloud</h2>
+<h2>NodePPT</h2>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.4.1</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'move',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+
+
+<!--placeholder-->
+</body>
+</html>
