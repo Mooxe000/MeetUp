@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodeppt start -p 8080 -d ./build/",
-    "execti": "docker exec -ti MeetUp /bin/bash"
+    "execti": "docker exec -ti MeetUp /bin/bash",
+    "build": "gulp include && nodeppt generate ./build ./dist -a",
+    "ghpages": "gulp ghpages"
   },
   "author": "FooTearth <footearth@gmail.com>",
   "license": "MIT",
