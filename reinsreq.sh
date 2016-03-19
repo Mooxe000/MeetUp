@@ -3,7 +3,8 @@
 set -e
 
 cnpm install -g \
-  nodeppt
+  nodeppt \
+  gh-pages
 
 cnpm install --save-dev \
   coffee-script \
